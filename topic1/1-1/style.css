@@ -1,0 +1,16 @@
+/* 2-Add a stylesheet to the index.html. Use the stylesheet to center the text of all section elements of the page.*/
+section{
+	text-align: center;
+}
+
+.error{
+	color: red;
+}
+
+.hightlight{
+	background-color: #FFFF00
+}
+
+#hidden{
+	display:none;
+}
