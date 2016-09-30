@@ -28,39 +28,39 @@ $(document).ready(function(){
 
 			//------------------------------Release Date
 			var paragraphDate = document.createElement("p"); 
-			paragraphDate.setAttribute("id", i +"releaseDate");
-			searchReleaseDate(v.href,i);
+			paragraphDate.setAttribute("id",i+"releaseDate");
+			searchReleaseDate(v,i,myArticle);
 			myArticle.appendChild(paragraphDate);
-
+			
 			//------------------------------Link to the album
-			var paragraphLink = document.createElement("a");
-			paragraphLink.appendChild(document.createTextNode("Link to the music: "));
-			paragraphLink.href = v.external_urls.spotify;
-			myArticle.appendChild(paragraphLink);
-
-			//------------------------------Image
-			var paragraphImg = document.createElement("img");
-			paragraphImg.src = v.images[1].url;
-			myArticle.appendChild(paragraphImg);
-
-
-			myArticle.setAttribute( "Class" ,"alignText");
-			myArticle.setAttribute("id",v.name);
 			document.getElementById("information").appendChild(myArticle);
-	        return;
-
+			return;
 		});
 
-		function searchReleaseDate(link,i){
+		function searchReleaseDate(v,i,myArticle){
 			$.ajax({
-			    url : link,
+			    url : v.href,
 			    type: 'GET',
 			    dataType: "json", 
 			    success : handleData
 				});
 			function handleData (data){
 				var paragraph = document.getElementById(i+"releaseDate");
-				paragraph.appendChild(document.createTextNode("Release date: "+ data.release_date));
+				paragraph.appendChild(document.createTextNode("Release date: "+ v.release_date));
+
+				var paragraphLink = document.createElement("a");
+				paragraphLink.appendChild(document.createTextNode("Link to the music: "));
+				paragraphLink.href = v.external_urls.spotify;
+				myArticle.appendChild(paragraphLink);
+
+				//------------------------------Image
+				var paragraphImg = document.createElement("img");
+				paragraphImg.src = v.images[1].url;
+				myArticle.appendChild(paragraphImg);
+
+				myArticle.setAttribute( "Class" ,"alignText");
+				myArticle.setAttribute("id",v.name);
+				return;
 			};
 		};
 	};

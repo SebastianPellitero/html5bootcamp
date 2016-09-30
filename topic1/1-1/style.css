@@ -1,5 +1,5 @@
 /* 2-Add a stylesheet to the index.html. Use the stylesheet to center the text of all section elements of the page.*/
-.quotes{
+section{
 	text-align: center;
 }
 
@@ -9,4 +9,8 @@
 
 .hightlight{
 	background-color: #FFFF00
+}
+
+#hidden{
+	display:none;
 }
