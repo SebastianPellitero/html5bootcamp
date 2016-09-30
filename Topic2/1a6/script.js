@@ -119,17 +119,3 @@ ironman.subscribeObserver(observer3);
 ironman.play();
 ironman.stop();
 
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Topic2</title>
-	
-	<script type="text/javascript" src="script.js"></script>
-</head>
-<body>
-
-
-</body>
-</html>
