@@ -1,0 +1,23 @@
+.header { 
+		font-size: 46px;
+}
+.footer {
+		font-size: 10px;
+}
+.content {
+		font-size: 14px;
+}
+.navigation {
+		font-size: 12px;
+}
+.sidebar {
+		font-size: 10px;
+}
+
+*[class$=r]{
+	background: magenta;
+}
+
+*[class*=a] + *:not(*[class$=r]){
+	background: blue;
+}
